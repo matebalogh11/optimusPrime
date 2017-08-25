@@ -4,9 +4,15 @@ public class Main {
 
     public static void main(String[] args) {
         int n = UserInput.getNumber();
+
         long startTime = System.currentTimeMillis();
-        System.out.println(calculatePrimes.getPrimes(n));
+        calculatePrimes.getPrimesMemoHeavy(n);
         long endTime = System.currentTimeMillis();
-        System.out.println("That took: " + (endTime - startTime) + "ms");
+        System.out.println("getPrimesMemoHeavy took: " + (endTime - startTime) + "ms");
+
+        startTime = System.currentTimeMillis();
+        calculatePrimes.getPrimesProcHeavy(n);
+        endTime = System.currentTimeMillis();
+        System.out.println("getPrimesProcHeavy took: " + (endTime - startTime) + "ms");
     }
 }
